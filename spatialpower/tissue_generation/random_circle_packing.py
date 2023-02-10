@@ -445,6 +445,8 @@ if __name__ == '__main__':
 
         nx.draw(graph, pos=position_dict, node_size=17, node_color=assigned_colors, with_labels=False)
         plt.savefig(str(outdir) + 'graph_' + time_stamp + '.png', dpi=350)
+        np.save(str(outdir) + 'C.npy', C) #gives coords
+        np.save(str(outdir) + 'A.npy', adjacency_matrix) #gives coords
 
     if args.voronoi:
         from scipy.spatial import Voronoi, voronoi_plot_2d
